@@ -1,30 +1,40 @@
-# agora-rtm-react
+# Agora RTM SDK React Wrapper
 
-> A wrapper for Agora RTM Web SDK to use with react/reactjs
+A react (react.js) wrapper for [Agora RTM SDK](https://www.npmjs.com/package/agora-rtm-sdk).
 
-[![NPM](https://img.shields.io/npm/v/agora-rtm-react.svg)](https://www.npmjs.com/package/agora-rtm-react) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+This wrapper supports **React >= v16.8**
 
 ## Install
-
 ```bash
-npm install --save agora-rtm-react
+npm install agora-rtm-react
 ```
 
 ## Usage
-
 ```tsx
-import React, { Component } from 'react'
+import React from 'react'
+import { createChannel, createClient, RtmMessage } from 'agora-rtm-react'
 
-import MyComponent from 'agora-rtm-react'
-import 'agora-rtm-react/dist/index.css'
+const useClient = createClient('<Agora App ID>');
+const useChannel = createChannel('channelName')
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
+const App = () => {
+  const client = useClient();
+  const testChannel = useChannel(client)
+
+  const login = async () => {
+    await client.login({ uid: 'userId' })
+    await testChannel.join()
   }
+  
+  const sendMsg = async (text: string) => {
+    const message = client.createMessage({ text, messageType: 'TEXT' })
+    await testChannel.sendMessage(message)
+  }
+...
 }
-```
 
-## License
+``` 
 
- © [EkaanshArora](https://github.com/EkaanshArora)
+## Example
+A chat example using the wrapper can be found in `./example`.
+
