@@ -1,4 +1,4 @@
-import AgoraRTM, { LocalInvitation, RtmChannel, RtmClient } from 'agora-rtm-sdk'
+import AgoraRTM, { RtmChannel, RtmClient } from 'agora-rtm-sdk'
 
 export default AgoraRTM
 export * from 'agora-rtm-sdk'
@@ -29,16 +29,16 @@ export const createChannel = (channelId: string) => {
   return (client: RtmClient) => createClosure(client)
 }
 
-export const createLocalInvitation = (calleeId: string) => {
-  let invitation: LocalInvitation
-  function createClosure(client: RtmClient) {
-    if (!invitation) {
-      invitation = client.createLocalInvitation(calleeId)
-    }
-    return invitation
-  }
-  return (client: RtmClient) => createClosure(client)
-}
+// export const createLocalInvitation = (calleeId: string) => {
+//   let invitation: LocalInvitation
+//   function createClosure(client: RtmClient) {
+//     if (!invitation) {
+//       invitation = client.createLocalInvitation(calleeId)
+//     }
+//     return invitation
+//   }
+//   return (client: RtmClient) => createClosure(client)
+// }
 interface RtmConfig {
   /**
    * Whether to enable log upload. It is set to `false` by default.
