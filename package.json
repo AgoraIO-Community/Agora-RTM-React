@@ -1,6 +1,6 @@
 {
   "name": "agora-rtm-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A wrapper for Agora RTM Web SDK to use with react/reactjs",
   "author": "EkaanshArora",
   "license": "",
