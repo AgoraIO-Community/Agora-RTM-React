@@ -1,6 +1,6 @@
 # Agora RTM SDK React Wrapper
 
-A react (react.js) wrapper for [Agora RTM SDK](https://www.npmjs.com/package/agora-rtm-sdk).
+A thin react.js wrapper for [Agora RTM SDK](https://www.npmjs.com/package/agora-rtm-sdk).
 
 This wrapper supports **React >= v16.8**
 
@@ -36,5 +36,7 @@ const App = () => {
 ``` 
 
 ## Example
-A chat example using the wrapper can be found in `./example`.
+A chat example using the wrapper can be found in `./example`
 
+## Docs
+You can view the [wrapper docs](https://agoraio-community.github.io/Agora-RTM-React), [Web SDK docs](https://docs.agora.io/en/Real-time-Messaging/landing-page?platform=Web) and the [SDK API Reference](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/v1.4.3/index.html)
